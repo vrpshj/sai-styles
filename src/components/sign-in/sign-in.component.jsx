@@ -2,7 +2,7 @@ import React from 'react';
 import './sign-in.styles.scss';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-
+import {signInWithGoogle} from '../../firebase/firebase.utils';
 class SignIn extends React.Component{
     constructor(props){
         super(props);
@@ -31,7 +31,8 @@ class SignIn extends React.Component{
                 value={this.state.email} onChange={this.handleChange}/>
                 <TextField variant="outlined" margin="normal" required  fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password" 
                  value={this.state.password} onChange={this.handleChange}/>
-                <Button type="submit" variant="contained" color="primary" className='signin'> Sign In</Button>
+                <Button type="submit" variant="contained" color="primary" className='signin'> Sign In</Button> OR
+                <Button onClick={signInWithGoogle} variant="contained" color="primary" className='google-signin'> Sign In with Google</Button>
                 </form>
             </div>
         );
