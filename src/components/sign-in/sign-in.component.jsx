@@ -12,7 +12,7 @@ class SignIn extends React.Component{
         }
     }
     handleSubmit=event=>{
-        event.preventdefault();
+        event.preventDefault();
         this.setState({email:'',password:''})
     }
     handleChange=event=>{
@@ -26,7 +26,7 @@ class SignIn extends React.Component{
             <div className='sign-in'>
                 <h2>I already have an account</h2>
                 <span>Sign in with your email and password</span>
-                <form noValidate onSubmit={this.handleSubmit}>
+                <form className='sign-in-form' onSubmit={this.handleSubmit}>
                 <TextField variant="outlined" margin="normal" required fullWidth  id="email" label="Email Address"  name="email" autoComplete="email" autoFocus 
                 value={this.state.email} onChange={this.handleChange}/>
                 <TextField variant="outlined" margin="normal" required  fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password" 
